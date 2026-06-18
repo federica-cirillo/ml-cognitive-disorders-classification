@@ -10,7 +10,7 @@ The pipeline was built with care around the two main challenges of the dataset: 
 
 - **Preprocessing**: removal of unreliable columns, outlier handling, and three custom scikit-learn transformers to impute missing values intelligently (using each test's qualitative outcome, plus a Random-Forest-based iterative imputer).
 - **Balancing**: SMOTETomek (combined over- and under-sampling) to mitigate the dominance of the healthy class.
-- **Modeling**: eight classifiers compared — Weighted KNN, Decision Tree, Balanced Random Forest, SVM, Extra Trees, LightGBM, CatBoost, and XGBoost (each tuned via Grid Search with 5-fold stratified cross-validation).
+- **Modeling**: eight classifiers compared (Weighted KNN, Decision Tree, Balanced Random Forest, SVM, Extra Trees, LightGBM, CatBoost and XGBoost, each tuned via Grid Search with 5-fold stratified cross-validation).
 - **Evaluation**: balanced accuracy, macro F1, and ROC AUC, chosen specifically because the dataset is imbalanced.
 
 The problem was reframed at four levels of difficulty (four classes, three classes, binary, and pathological-only), and each was tested with three different feature subsets to study how variable selection affects performance.
