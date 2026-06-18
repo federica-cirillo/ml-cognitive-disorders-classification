@@ -19,10 +19,18 @@ The problem was reframed at four levels of difficulty (four classes, three class
 
 Difficulty scales clearly with the number of classes. Binary classification (disorder vs. no disorder) reached up to ~89% balanced accuracy with XGBoost, while the full four-class problem stayed around ~52%. Across all settings, Alzheimer's disease was the most reliably identified condition (a meaningful result given the clinical importance of its early detection).
 
+## Repository structure
+
+The analysis is split across one preprocessing notebook and three modeling notebooks, one per feature subset:
+
+- **`Preprocessing.ipynb`** — data cleaning, missing-value analysis, outlier handling, exploratory analysis, and construction of the dataset variants.
+- **`Modelli_featuresPG_ESITO.ipynb`** — model training and evaluation using all features (raw scores + qualitative outcomes + demographics).
+- **`Modelli_featuresESITO.ipynb`** — model training using demographic and qualitative-outcome features only.
+- **`Modelli_featuresPG.ipynb`** — model training using demographic and raw-score features only.
+- **`DocumentazioneProgetto.pdf`** — full methodology, figures, and results.
+
 ## Tech stack
 
 Python · scikit-learn · imbalanced-learn · XGBoost · CatBoost · LightGBM · pandas · Google Colab
 
-## Documentation
 
-Full methodology, figures, and results are available in `DocumentazioneProgetto.pdf`.
